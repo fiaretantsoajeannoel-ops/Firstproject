@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .im{
+            width: 140px;
+            height: 220px;
+            border-radius: 30%;
+        }
+        .h{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            color:whitesmoke;
+            background-color:darkblue; 
+        }
+        .formation{
+            color:white;
+            background-color:black ;
+             width: 240px;
+            height:360px;
+            border-radius: 40px;
+        }
+        
+        .n{
+            color:white;
+            background-color:gray ;
+            width: 240px;
+            height: 360px;
+            border-radius: 40px;
+        }
+        .experience{
+            color:white;
+            background-color:orangered ;
+        }
+    </style>
+</head>
+<body >
+    <h1 class="h">MON CV</h1>
+    <div style="display: flex;">
+        <div>
+            <img src="tsoa.jpg" alt="tsoa" class="im">
+        </div>
+        <div>
+            <h2 class="experience">ETAT CIVIL</h2>
+            <ul class="n">
+                <li>FIARETANTSOA Jean Noël</li>
+                <li>Adresse:SOANIERANA</li>
+                <li>TELEPHONE: <a href="tel:0383811468">0383811468</a></li>
+                <li>E MAIL:  <a href="mailto:fiaretantsoajeannoel@gmail.com">fiaretantsoajeannoel@gmail.com</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="experience">FORMATION</h2>
+            <div>
+                <ul class="formation">
+                    <li>-2018:EPP</li>
+                    <li>2019-2022:CEG </li>
+                    <li>2023-2025:LYCEE MANANDRIANA</li>
+                    <li>+2026:UNIVERSITE FAC SCIENCE</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h2 class="experience">EXPERIENCE</h2>
+            <div>
+                <ul class="n">
+                    <li>Relation amicale et famillialee </li>
+                    <li>depanange electronique comme radio ,telephone,montre,torche</li>
+                    <li>Apprentissage de matier scientifique et langue francais et anglais</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <h2 class="experience">DIVERS</h2>
+            <div>
+                <ul class="formation">
+                    <li>SPORT:footbal,basketbal,tenis,art martiaux</li>
+                    <li>DOCUMENTAIRE:musique ,videos,</li>
+                    <li>Chanter,Dansser,faire le comedie</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h2 class="h">HOMME DE MOTIVATION ET DISCIPLINE</h2>
+    <h1 style="align-items: center;color: azure;background-color: black;">LA FITURE DE CV ET L_INTENTION </h1>
+    <div style="display: flex;">
+        <div style="background-color: dimgrey;width: 340px;">
+            <label >ANNEE</label>
+            <input type="number" id="ANNEEInput">
+            <label >EXPERIENCE</label>
+            <input type="text" id="EXPERIENCEInput">
+            <label >DIPLOME</label>
+            <input type="text" id="DIPLOMEInput">
+           <button type="button" onclick="envoie()">ENVOYER</button>
+           
+        </div>
+        <div style="display: flex;justify-content: flex-end; background-color: bisque;">
+         <table border="1" style="width: 96%;table-layout: fixed; height: 20px;" id="table">
+            <thead>
+                <tr>
+                    <th>ANNEE</th>
+                    <th>EXPERIENCE</th>
+                    <th>DIPLOME</th>
+                </tr>
+            </thead>    
+            <tbody id="corptab">
+            </tbody>
+         </table>  
+        </div>
+    </div>
+    <script>
+          function envoie(){
+            //ampidirina ao anaty var ny donne azo
+            var ANNEE=document.getElementById("ANNEEInput").value;
+            var EXPERIENCE=document.getElementById("EXPERIENCEInput").value;
+            var DIPLOME=document.getElementById("DIPLOMEInput").value;
+            //alert alefa raha ts feno ny fafana
+            if(ANNEE==""||EXPERIENCE==""||DIPLOME==""){
+                alert("fenoy aby letsy aa");
+                return;
+            }
+            //omena variable ny tableau
+            var table=document.getElementById("corptab");
+            //mamorona andalana vaovao ao aminy tableau
+            var newcol=table.insertRow();
+            //mamorona collone vaovao
+            var cellANNEE=newcol.insertCell(0);
+            var cellEXPERIENCE=newcol.insertCell(1);
+            var cellDIPLOME=newcol.insertCell(2);
+             //hamindra ny soratra makany aminy tableau
+            cellANNEE.innerHTML=ANNEE;
+            cellEXPERIENCE.innerHTML=EXPERIENCE;
+            cellDIPLOME.innerHTML=DIPLOME;
+            //mamerina ny zavatra avy nofenoina ho vide
+              document.getElementById("ANNEEInput").value="" ;
+              document.getElementById("EXPERIENCEInput").value="" ;
+              document.getElementById("DIPLOMEInput").value="" ;     
+          }
+    </script>
+</body>
+</html>

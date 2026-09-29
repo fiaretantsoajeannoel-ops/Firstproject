@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex;">
+        <div style="display: block;">
+            <label>Numero</label>
+            <input type="text" id="numInput">
+            <br>
+            <label>Nom</label>
+            <input type="text" id="nomInput">
+            <br>
+            <button type="button" onclick="envoi()">ENVOYER</button>
+        </div>
+        <div>
+            <table border="1" style="width: 100%; min-width: 300px;height: 40px;" id="table">
+               <thead>
+                    <tr>
+                        <th>Numero</th>
+                        <th>NOM</th>
+                    </tr>
+                </thead>
+                <tbody id="corptab"></tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function envoi(){
+            //maka ireo soratra nosoratana
+            var num=document.getElementById("numInput").value;
+            var nom=document.getElementById("nomInput").value;
+            //fanamarihana raha misy ts feno ny banga
+            if(num===""||nom===""){
+                alert("fenoy soa moa");
+                return;
+            }
+            //fanomezana variable tableau
+            var table=document.getElementById("corptab");
+            //mamorona andalana vaovao amin tableau
+            var newRow=table.insertRow();
+            //mamorona cage hasiana ny nom sy num
+            var cell1=newRow.insertCell(0);
+            var cell2=newRow.insertCell(1);
+            //mampiditra ny sortra ao anaty tableau
+            cell1.innerText=num;
+            cell2.innerText=nom;
+            //foanan ny fanoratana rehefa mahatafiditra
+            document.getElementById("numInput").value = "";
+            document.getElementById("nomInput").value = "";
+        }
+    </script>
+
+</body>
+</html>
