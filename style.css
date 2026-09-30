@@ -11,8 +11,13 @@
        border-radius: 30px; 
        width: 240px;
        height: 320px;
+       th{
     }
-    th{
         border: 1px solid black;
         padding: 10px;
+
+    }
+    ul{
+        list-style-type: "➡️";
+        padding-left: 20px;
     }

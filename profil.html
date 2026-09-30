@@ -6,6 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        #contenuBibliographique {
+        margin-top: 20px;
+        width: 100%;
+        }
+
+        #contenuVieprive {
+        margin-top: 20px;
+        width: 100%;
+        }
         .im{
             width: 140px;
             height: 220px;
@@ -21,10 +30,10 @@
         }
         .formation{
             color:white;
-            background-color:black ;
+            background-color:rgba(126, 51, 212, 0.281) ;
              width: 240px;
             height:360px;
-            border-radius: 40px;
+            
         }
         
         .n{
@@ -32,16 +41,17 @@
             background-color:gray ;
             width: 240px;
             height: 360px;
-            border-radius: 40px;
+            
         }
         .experience{
             color:white;
             background-color:orangered ;
+            width: 100%;
         }
     </style>
 </head>
-<body >
-    <h1 class="h">MON CV</h1>
+<body style="background-color:rgb(30, 30, 48)">
+    <h1 class="h" style="justify-content: center;">MON CV</h1>
     <div style="display: flex;">
         <div>
             <img src="tsoa.jpg" alt="tsoa" class="im">
@@ -67,23 +77,24 @@
             </div>
         </div>
         <div>
-            <h2 class="experience">EXPERIENCE</h2>
-            <div>
-                <ul class="n">
-                    <li>Relation amicale et famillialee </li>
-                    <li>depanange electronique comme radio ,telephone,montre,torche</li>
-                    <li>Apprentissage de matier scientifique et langue francais et anglais</li>
-                </ul>
+                <h2 class="experience">EXPERIENCE</h2>
+                <div>
+                    <ul class="n">
+                        <li>Relation amicale et famillialee </li>
+                        <li>depanange electronique comme radio ,telephone,montre,torche</li>
+                        <li>Apprentissage de matier scientifique et langue francais et anglais</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div>
-            <h2 class="experience">DIVERS</h2>
             <div>
-                <ul class="formation">
-                    <li>SPORT:footbal,basketbal,tenis,art martiaux</li>
-                    <li>DOCUMENTAIRE:musique ,videos,</li>
-                    <li>Chanter,Dansser,faire le comedie</li>
-                </ul>
+                <h2 class="experience">DIVERS</h2>
+                <div>
+                    <ul class="formation">
+                        <li>SPORT:footbal,basketbal,tenis,art martiaux</li>
+                        <li>DOCUMENTAIRE:musique ,videos,</li>
+                        <li>Chanter,Dansser,faire le comedie</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -114,6 +125,19 @@
          </table>  
         </div>
     </div>
+    <div style="display: flex;">
+        <table border="1" style="width: 100%; height: auto;">
+            <thead>
+                <tr>
+                    <th><button onclick="bibliographique()">BIBLIOGRAPHIQUE</button></th>
+                    <th><button onclick="vieprive()">VIE PRIVEE</button></th>
+                </tr>
+            </thead>
+        </table>
+        <div id="contenuBibliographique"> </div>
+        <div id="contenuVieprive"></div>
+
+    </div>
     <script>
           function envoie(){
             //ampidirina ao anaty var ny donne azo
@@ -142,6 +166,39 @@
               document.getElementById("EXPERIENCEInput").value="" ;
               document.getElementById("DIPLOMEInput").value="" ;     
           }
+          function bibliographique(){
+            document.getElementById('contenuBibliographique').innerHTML=`
+            <div style="background-color:orange">
+             <h1>bibliographie de FIARETANTSOA jn</h1>
+                <ul>
+                    <li>teraka tao ambvombe centre manandriana </li>
+                    <li>ary nianatra nandritra ny 14 taona tao ary manohy eny aminy anjery manontolo ankehitriny</li>
+                    <li>naterak i Randrianirina JS et Rasoa PC</li>
+                    <li>efa maro be ny ezaka vita fa mbola manohyb azy ankehitriny</li>
+                </ul>
+            </div> `;
+         }
+         function vieprive(){
+            var code=prompt("ampidiro ny mots de passe");
+            if(code=='271220'){
+                document.getElementById("contenuVieprive").innerHTML=`
+                
+                <label for="selection" style="background-color:orange">mes petite amies et ex</label>
+                <select  id="choix">
+                    <option value="1">FLORENCE 2</option>
+                    <option value="2">ANGELINE </option>
+                    <option value="3">MAMY;</option>
+                    <option value="4">MELANIE</option>
+                    <option value="5">ROJOHITA</option>
+                    <option value="6">SAFIDY</option>
+                    <option value="7">NIRINA</option>
+                    <option value="8">MBOLA MISY AKOANTRANIO</option>
+                </select>`;
+            }
+            else{
+            alert("azafady tsy azo idirana raha ts mahazo alalana")
+            }   
+         }
     </script>
 </body>
 </html>
