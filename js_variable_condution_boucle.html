@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=Number(prompt("a"));
+        let b=Number(prompt("b"));
+        let c=Number(prompt("c"));
+        console.log(`iza aminy ${a}-${b}-${c} no lehibe ary nombre paire ve io`);
+        if(a<c && b<c ){
+            if(c%2===0){
+                console.log(`mazava hoazy ny ${c} no lehibe sady nombre paire`);
+            }
+            else{
+                console.log(`mazava hoazy ny ${c} no lehibe fa tsy nombre paire`);
+            }
+        }
+        else{
+           if(a<b){
+             if(b % 2===0){
+                console.log(`mazava hoazy ny ${b} no lehibe sady nombre paire`);
+            }
+            else{
+                console.log(`mazava hoazy ny ${b} no lehibe fa tsy nombre paire`);
+            }
+           }
+           else{
+             if(a % 2===0){
+                console.log(`mazava hoazy ny ${a} no lehibe sady nombre paire`);
+            }
+            else{
+                console.log(`mazava hoazy ny ${a} no lehibe fa tsy nombre paire`);
+            }
+           }
+        }
+        console.log(`ireo isa ao anatiny ${a}-${b}-${c} ny miakatra sy ny midina`);
+        for (let i=a ;i<=c;i++) {
+             
+                console.log(i);
+             }  
+        for(let j=c;j>=a;j--){
+                console.log(j);
+    }
+    </script>
+</body>
+</html>
